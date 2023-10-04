@@ -3,9 +3,9 @@ const {addTask, getUserTasks, getAllTasks, deleteUserTasks, updateTask} = requir
 const {isAuthenticated, isOwner, isTaskOwner} = require('../middlewares');
 
 module.exports = (router) => {
-    router.post('/task/add/:id', isAuthenticated, isOwner ,addTask);
-    router.get('/task/:id', isAuthenticated, isOwner, getUserTasks);
-    router.get('/task', isAuthenticated, getAllTasks);
-    router.delete('/task/delete/:userid/:taskid', isAuthenticated, isTaskOwner, deleteUserTasks);
-    router.patch('/task/update/:userid/:taskid', isAuthenticated, isTaskOwner, updateTask);
+    router.post('/task/add/:id' ,addTask);
+    router.get('/task/:id', getUserTasks);
+    router.get('/task', getAllTasks);
+    router.delete('/task/delete/:userid/:taskid', deleteUserTasks);
+    router.patch('/task/update/:userid/:taskid', updateTask);
 };
