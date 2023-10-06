@@ -41,7 +41,7 @@ module.exports.updateUser = async (req, res) => {
 
         return res.status(200).json(user).end();
     }catch(error){
-        console.error();
+        console.log(error);
         return res.sendStatus(400);
     }
 }
